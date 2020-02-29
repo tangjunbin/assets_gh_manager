@@ -1,0 +1,2 @@
+rootProject.name='固定资产管理'
+include ':app', ':xui_lib', ':widget_compiler'

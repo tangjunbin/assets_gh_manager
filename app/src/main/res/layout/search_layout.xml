@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 xuexiangjys(xuexiangjys@163.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        >
+        <!--
+            搜索图标  左边
+            android:drawableLeft="@mipmap/icon_search"
+            android:drawablePadding="5dp"  图标和文字的间距
+            右边
+            android:drawableRight="@mipmap/round_close"
+            android:paddingRight="8dp"
+            android:imeOptions="actionSearch"  设置成搜索按钮
+        -->
+        <ImageButton
+            android:layout_gravity="center"
+            android:id="@+id/home_left_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="11dp"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@mipmap/icon_scan"
+            />
+        <RelativeLayout
+            android:layout_height="40dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/search_text_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="搜索"
+                android:background="@drawable/search_gray"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="9dp"
+                android:textSize="12sp"
+                android:drawableLeft="@mipmap/icon_search"
+                android:paddingLeft="9dp"
+                android:drawablePadding="5dp"
+                android:paddingRight="8dp"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/action_clear_btn"
+                style="@style/MSV_ImageButton"
+                android:layout_marginTop="10dp"
+                android:layout_alignRight="@+id/search_text_in"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/round_close"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/search_close"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="取消"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e4e4e4"
+        />
+    <LinearLayout
+        android:id="@+id/tag_list"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextStyle.Explain"
+                android:text="搜索历史" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+                android:id="@+id/btn_clear_log_tag"
+                style="@style/ImageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/icon_delete"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+        <com.xuexiang.xui.widget.flowlayout.FlowTagLayout
+            android:id="@+id/search_history_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/page_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_end"
+        android:textColor="@color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:text="共0条记录"/>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/search_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableAutoLoadMore="true"
+        app:srlEnableLoadMore="true">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlDrawableArrowSize="20dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgressSize="20dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextTimeMarginTop="2dp" />
+
+        <com.xuexiang.xui.widget.statelayout.StatefulLayout
+            android:id="@+id/searchll_stateful"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:stf_animationEnabled="false"
+            app:stf_inAnimation="@android:anim/slide_in_left"
+            app:stf_outAnimation="@android:anim/slide_out_right">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_search_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                tools:listitem="@android:layout/simple_list_item_2" />
+
+        </com.xuexiang.xui.widget.statelayout.StatefulLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>
