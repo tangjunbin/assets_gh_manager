@@ -18,6 +18,7 @@
 package com.xuexiang.xuidemo.utils.sdkinit;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.xuexiang.xuidemo.MyApp;
 import com.xuexiang.xuidemo.utils.update.CustomUpdateDownloader;

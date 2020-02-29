@@ -11,11 +11,11 @@ android {
     buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        applicationId "com.xuexiang.xuidemo"
+        applicationId "com.wuqian.gh"
         minSdkVersion 17
         targetSdkVersion build_versions.target_sdk
-        versionCode 12
-        versionName "1.1.1"
+        versionCode 13
+        versionName "1.1.2"
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
