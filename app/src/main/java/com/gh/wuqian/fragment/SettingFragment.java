@@ -18,6 +18,10 @@
 package com.gh.wuqian.fragment;
 
 import android.content.Intent;
+import android.os.Build;
+import android.util.Log;
+import android.view.View;
+import android.webkit.ValueCallback;
 import android.widget.CompoundButton;
 
 import com.gh.wuqian.activity.MainActivity;
@@ -28,6 +32,7 @@ import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 import com.gh.wuqian.R;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @author xuexiang
@@ -63,6 +68,16 @@ public class SettingFragment extends BaseFragment implements CompoundButton.OnCh
         stvSwitchCustomTheme.setSwitchCheckedChangeListener(this);
     }
 
+    @OnClick({R.id.stv_switch_printer})
+    public void onViewClicked(View view){
+        switch (view.getId()) {
+            case R.id.stv_switch_printer:
+                openNewPage(PrinterFragment.class);
+                break;
+            default:
+                break;
+        }
+    }
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SettingSPUtils.getInstance().setIsUseCustomTheme(isChecked);
