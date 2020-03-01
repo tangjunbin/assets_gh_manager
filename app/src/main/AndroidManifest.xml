@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.xuexiang.xuidemo">
+    package="com.gh.wuqian">
 
     <!-- 这个权限用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -63,7 +63,7 @@
             android:name=".activity.LoginActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
         <activity android:name=".activity.UserGuideActivity" />
@@ -143,12 +143,12 @@
         <activity android:name=".activity.TranslucentActivity" />
         <activity
             android:name=".fragment.expands.camera.CameraActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Camera"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".fragment.expands.camera.PictureCropActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Camera"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
@@ -158,7 +158,7 @@
         <activity
             android:name=".fragment.expands.qrcode.CustomCaptureActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/XQRCodeTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity

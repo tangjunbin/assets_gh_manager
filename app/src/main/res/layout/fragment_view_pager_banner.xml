@@ -63,7 +63,7 @@
                 android:textColor="#383838"
                 android:textSize="16sp" />
 
-            <com.xuexiang.xuidemo.widget.RadiusImageBanner
+            <com.gh.wuqian.widget.RadiusImageBanner
                 android:id="@+id/rib_simple_usage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

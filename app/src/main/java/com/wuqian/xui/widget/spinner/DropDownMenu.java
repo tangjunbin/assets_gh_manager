@@ -23,7 +23,6 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -38,7 +37,7 @@ import androidx.annotation.NonNull;
 import com.xuexiang.xui.utils.DeviceUtils;
 import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
-import com.xuexiang.xuidemo.R;
+import com.gh.wuqian.R;
 
 import java.util.Arrays;
 import java.util.List;

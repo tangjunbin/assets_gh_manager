@@ -31,6 +31,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/spacing_16"
         android:src="@drawable/ic_add_white_24dp"
-        app:layout_behavior="com.xuexiang.xuidemo.widget.FabBehavior" />
+        app:layout_behavior="com.xuexiang.wuqian.com.gh.wuqian.widget.FabBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

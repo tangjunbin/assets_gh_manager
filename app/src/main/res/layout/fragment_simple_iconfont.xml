@@ -41,7 +41,7 @@
             style="@style/TextStyle.Content"
             android:text="XUIIconImageView:"/>
 
-        <com.xuexiang.xuidemo.widget.iconfont.XUIIconImageView
+        <com.gh.wuqian.widget.iconfont.XUIIconImageView
             android:id="@+id/xiiv_font"
             android:layout_width="24dp"
             android:layout_height="24dp"
